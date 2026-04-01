@@ -224,7 +224,8 @@ p {
 .project-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 1rem;
 }
 
 .project-logo-custom {
@@ -232,8 +233,8 @@ p {
   font-weight: 800;
   font-size: 3rem;
   letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
   display: flex;
   align-items: center;
   white-space: nowrap;
