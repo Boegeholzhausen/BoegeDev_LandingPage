@@ -362,7 +362,7 @@ p {
   font-size: 0.75rem;
   color: var(--on-surface-variant);
   opacity: 0.7;
-  text-align: right;
+  text-align: left;
 }
 
 .impressum-group {
@@ -378,10 +378,11 @@ p {
 }
 
 .copyright {
-  font-size: 0.8125rem;
+  font-size: 0.7rem;
   color: var(--on-surface-variant);
-  opacity: 0.6;
+  opacity: 0.5;
   white-space: nowrap;
+  text-align: right;
 }
 
 /* Status Chip */
