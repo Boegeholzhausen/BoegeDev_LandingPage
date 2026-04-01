@@ -322,6 +322,10 @@ p {
   margin-top: 4rem;
 }
 
+.site-footer .container {
+  position: relative;
+}
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -380,11 +384,13 @@ p {
 }
 
 .copyright {
-  font-size: 0.73rem;
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  font-size: 0.7rem;
   color: var(--on-surface-variant);
   opacity: 0.3;
   white-space: nowrap;
-  text-align: right;
 }
 
 /* Status Chip */
