@@ -324,6 +324,13 @@ p {
 
 .site-footer .container {
   position: relative;
+  min-height: 5rem;
+}
+
+@media (max-width: 600px) {
+  .site-footer .container {
+    min-height: 8rem;
+  }
 }
 
 .footer-content {
@@ -332,6 +339,7 @@ p {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  padding-bottom: 1rem; /* Space for the absolute copyright */
 }
 
 .footer-links {
@@ -377,10 +385,15 @@ p {
 }
 
 .copyright {
+  position: absolute;
+  right: 5%;
+  bottom: 0.5rem;
   font-size: 0.7rem;
   color: var(--on-surface-variant);
   opacity: 0.3;
   white-space: nowrap;
+  text-align: right;
+  width: auto;
 }
 
 @media (max-width: 600px) {
@@ -389,6 +402,7 @@ p {
     align-items: center;
     text-align: center;
     gap: 1.5rem;
+    padding-bottom: 2rem; /* More space on mobile */
   }
 }
 
