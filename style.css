@@ -380,11 +380,13 @@ p {
 }
 
 .copyright {
-  font-size: 0.7rem;
+  font-size: 0.73rem;
   color: var(--on-surface-variant);
-  opacity: 0.5;
+  opacity: 0.3;
   white-space: nowrap;
   text-align: right;
+  margin-top: 4rem;
+  padding-bottom: 2.5rem;
 }
 
 /* Status Chip */
