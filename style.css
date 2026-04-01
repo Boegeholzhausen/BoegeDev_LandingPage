@@ -20,7 +20,7 @@
   --font-body: 'Inter', sans-serif;
   
   /* Shadows */
-  --ambient-shadow: 0 20px 40px rgba(6, 14, 32, 0.4);
+  --ambient-shadow: 0 10px 25px rgba(6, 14, 32, 0.3);
   
   /* Border radius */
   --radius-md: 0.375rem;
@@ -80,8 +80,8 @@ p {
 }
 
 .section {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 /* No-Line Rule & Surfaces */
@@ -201,17 +201,17 @@ p {
 .project-card {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  padding: 4rem;
-  margin-top: 4rem;
+  gap: 2rem;
+  padding: 2.5rem;
+  margin-top: 2rem;
 }
 
 /* Override padding for smaller screens */
 @media (max-width: 992px) {
   .project-card {
     grid-template-columns: 1fr;
-    padding: 2.5rem;
-    gap: 3rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
   }
 }
 
@@ -230,7 +230,7 @@ p {
 
 .features-list {
   list-style: none;
-  margin-top: 2.75rem; /* Spacing 8 */
+  margin-top: 1.5rem;
 }
 
 .features-list li {
@@ -271,17 +271,17 @@ p {
   position: relative;
 }
 
-.project-preview img {
+.project-preview img.app-screenshot {
   width: 100%;
-  border-radius: var(--radius-md);
-  box-shadow: var(--ambient-shadow);
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  /* Slight glass border effect for the image wrapper */
-  border: 1px solid rgba(70, 69, 84, 0.15);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  border: 6px solid var(--surface-container-highest);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-preview:hover img {
-  transform: translateY(-10px) scale(1.02);
+.project-preview:hover img.app-screenshot {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 /* Sneak Peek */
@@ -298,9 +298,9 @@ p {
 
 /* Footer & Impressum */
 .site-footer {
-  padding: 4rem 0 2rem;
+  padding: 3rem 0 2rem;
   border-top: 1px solid rgba(70, 69, 84, 0.1);
-  margin-top: 7rem;
+  margin-top: 4rem;
 }
 
 .footer-content {
@@ -308,8 +308,8 @@ p {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 4rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .footer-links {
