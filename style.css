@@ -242,7 +242,7 @@ p {
 }
 
 .logo-track {
-  color: var(--primary-container);
+  color: #5865f2; /* A more vibrant, saturated blue */
 }
 
 .features-list {
