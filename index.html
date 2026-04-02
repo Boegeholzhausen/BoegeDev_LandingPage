@@ -61,7 +61,21 @@
                 </div>
 
                 <div class="project-preview">
-                    <img src="design/RepoTrack_Dashboard.jpg" alt="Vorschau des RepoTrack Dashboards"
+                    <!-- Light/Dark Mode Switcher -->
+                    <div class="mode-switcher">
+                        <button class="mode-circle mode-light active" onclick="setProjectMode('light', this)" title="Light Mode"></button>
+                        <button class="mode-circle mode-dark" onclick="setProjectMode('dark', this)" title="Dark Mode"></button>
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <button class="nav-arrow prev" onclick="switchProjectView(-1)" aria-label="Previous View">
+                        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="nav-arrow next" onclick="switchProjectView(1)" aria-label="Next View">
+                        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+
+                    <img id="project-screenshot" src="design/RepoTrack_Lightmode_Dashboard.jpg" alt="Vorschau des RepoTrack Dashboards"
                         class="app-screenshot">
                 </div>
             </div>
@@ -93,6 +107,52 @@
         </div>
     </footer>
 
+    <script>
+        let currentView = 'dashboard';
+        let currentMode = 'light';
+
+        const projectImages = {
+            dashboard: {
+                light: 'design/RepoTrack_Lightmode_Dashboard.jpg',
+                dark: 'design/RepoTrack_Darkmode_Dashboard.png'
+            },
+            stats: {
+                light: 'design/RepoTrack_Lightmode_Stats.jpg',
+                dark: 'design/RepoTrack_Darkmode_Stats.png'
+            }
+        };
+
+        function updateProjectImage() {
+            const img = document.getElementById('project-screenshot');
+            
+            // Subtle transition
+            img.style.opacity = '0.4';
+            img.style.filter = 'blur(4px)';
+            
+            setTimeout(() => {
+                img.src = projectImages[currentView][currentMode];
+                img.style.opacity = '1';
+                img.style.filter = 'blur(0)';
+            }, 250);
+        }
+
+        function setProjectMode(mode, element) {
+            if (currentMode === mode) return;
+
+            currentMode = mode;
+            const buttons = document.querySelectorAll('.mode-circle');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            
+            updateProjectImage();
+        }
+
+        function switchProjectView(direction) {
+            // Toggles between the two available views
+            currentView = (currentView === 'dashboard') ? 'stats' : 'dashboard';
+            updateProjectImage();
+        }
+    </script>
 </body>
 
 </html>
