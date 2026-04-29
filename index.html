@@ -5,6 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoegeDev | Innovative Apps für die digitale Welt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#020617',
+                            900: '#0b1120',
+                        },
+                        brand: {
+                            cyan: '#22d3ee',
+                            orange: '#f97316',
+                        }
+                    },
+                    animation: {
+                        'dash': 'dash 20s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        dash: {
+                            'from': { 'stroke-dashoffset': '1000' },
+                            'to': { 'stroke-dashoffset': '0' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
     <link rel="stylesheet" href="style.css?v=1.1">
     <!-- Meta Descriptions for SEO -->
     <meta name="description"
@@ -13,21 +58,116 @@
 
 <body>
 
-    <!-- Hero Section -->
-    <header class="section hero surface-low">
-        <div class="container">
-            <h1 class="gradient-text">BoegeDev</h1>
-            <h2>Innovative Apps für die<br>digitale Welt</h2>
-            <p>
+    <!-- New Futuristic Hero Section -->
+    <header id="hero"
+        class="relative min-h-screen bg-[#020617] overflow-hidden flex flex-col items-center justify-center font-sans">
+
+        <!-- Background Ambient Glows -->
+        <div class="absolute inset-0 z-0">
+            <!-- Cyan Glow Top Left -->
+            <div
+                class="absolute -top-[10%] -left-[5%] w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] animate-pulse">
+            </div>
+            <!-- Orange Glow Middle Right -->
+            <div class="absolute top-[30%] -right-[10%] w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[160px] animate-pulse"
+                style="animation-delay: 2s;"></div>
+            <!-- Center Subtle Glow -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[160px]">
+            </div>
+        </div>
+
+        <!-- Decorative Tech Elements -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <!-- Grid Pattern -->
+            <div
+                class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay">
+            </div>
+
+            <!-- Circuit Lines (SVG) -->
+            <svg class="absolute top-0 left-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgb(34,211,238);stop-opacity:0" />
+                        <stop offset="50%" style="stop-color:rgb(34,211,238);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(34,211,238);stop-opacity:0" />
+                    </linearGradient>
+                </defs>
+                <path d="M-100 200 L400 200 L500 300 L1200 300" stroke="url(#lineGrad)" stroke-width="1" fill="none"
+                    stroke-dasharray="1000" stroke-dashoffset="1000" class="animate-dash" />
+                <path d="M1400 600 L1000 600 L900 700 L200 700" stroke="url(#lineGrad)" stroke-width="1" fill="none"
+                    stroke-dasharray="1000" stroke-dashoffset="1000" class="animate-dash"
+                    style="animation-delay: -5s;" />
+            </svg>
+
+            <!-- Floating Isometric Cubes (CSS) -->
+            <div class="absolute top-[20%] left-[15%] w-16 h-16 transform rotate-[30deg] skew-x-[-20deg] border border-cyan-500/30 bg-cyan-500/5 backdrop-blur-sm animate-bounce shadow-[0_0_20px_rgba(34,211,238,0.2)]"
+                style="animation-duration: 4s;"></div>
+            <div class="absolute bottom-[20%] right-[12%] w-24 h-24 transform rotate-[-15deg] skew-x-[10deg] border border-orange-500/30 bg-orange-500/5 backdrop-blur-sm animate-bounce shadow-[0_0_50px_rgba(249,115,22,0.3)]"
+                style="animation-duration: 6s;"></div>
+            <div
+                class="absolute top-[60%] right-[20%] w-12 h-12 transform rotate-[45deg] border border-blue-400/20 bg-blue-400/5 backdrop-blur-sm animate-pulse">
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="absolute top-0 left-0 w-full px-8 py-6 flex justify-between items-center z-50">
+            <div class="flex items-center space-x-3">
+                <!-- Logo -->
+                <div class="relative w-12 h-12">
+                    <img src="design/boegedev_logo.png" alt="BoegeDev Logo"
+                        class="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]">
+                </div>
+                <span class="text-2xl font-bold text-white tracking-tighter">BoegeDev</span>
+            </div>
+
+            <!-- Nav Links & Login Button (Optional/Omitted for now) -->
+            <div class="hidden md:flex items-center space-x-8">
+                <!-- Links could go here -->
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl">
+            <h1 class="text-6xl md:text-8xl font-black text-white mb-8 tracking-tight leading-[1.1]">
+                The Future of <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-blue-500 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+                    App Development
+                </span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl font-light leading-relaxed mb-12">
                 Wir verschieben die Grenzen des Möglichen durch ästhetisches, nutzerzentriertes Interface-Design und
                 zukunftssichere, hochperformante Software-Architektur. Unsere Leidenschaft ist es, visionäre Ideen in
                 nahtlose digitale Erlebnisse zu transformieren.
             </p>
+
+            <!-- CTA Button placeholder (Omitted per user feedback) -->
         </div>
+
+        <!-- Tech Graphics in Corners -->
+        <!-- Bottom Left (Subtle V2) -->
+        <div class="absolute -left-10 bottom-[-20px] w-[600px] h-[600px] opacity-40 mix-blend-screen hidden xl:block pointer-events-none"
+            style="mask-image: radial-gradient(circle at center, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 70%);">
+            <img src="design/tech_bottom_left_v2.png" alt="Tech Graphic Left" class="w-full h-full object-contain">
+        </div>
+
+        <!-- Top Right (V4 Classic Style) -->
+        <div class="absolute -right-[120px] -top-[80px] w-[650px] h-[650px] opacity-40 mix-blend-screen hidden xl:block animate-float pointer-events-none"
+            style="animation-delay: -3s; mask-image: radial-gradient(circle at center, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);">
+            <img src="design/tech_top_right_v4.png" alt="Tech Graphic Right" class="w-full h-full object-contain">
+        </div>
+
     </header>
 
     <!-- Featured Project Section -->
-    <section class="section featured-project surface">
+    <section class="relative py-24 bg-[#020617] overflow-hidden reveal">
+        <!-- Subtle Background Glow for matching -->
+        <div
+            class="absolute top-1/2 left-0 w-[400px] h-[400px] bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
         <div class="container">
             <span class="status-chip">Featured Project</span>
 
@@ -63,51 +203,88 @@
                 <div class="project-preview">
                     <!-- Light/Dark Mode Switcher -->
                     <div class="mode-switcher">
-                        <button class="mode-circle mode-light active" onclick="setProjectMode('light', this)" title="Light Mode"></button>
-                        <button class="mode-circle mode-dark" onclick="setProjectMode('dark', this)" title="Dark Mode"></button>
+                        <button class="mode-circle mode-light active" onclick="setProjectMode('light', this)"
+                            title="Light Mode"></button>
+                        <button class="mode-circle mode-dark" onclick="setProjectMode('dark', this)"
+                            title="Dark Mode"></button>
                     </div>
 
                     <!-- Navigation Arrows -->
                     <button class="nav-arrow prev" onclick="switchProjectView(-1)" aria-label="Previous View">
-                        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
                     </button>
                     <button class="nav-arrow next" onclick="switchProjectView(1)" aria-label="Next View">
-                        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
                     </button>
 
-                    <img id="project-screenshot" src="design/RepoTrack_Lightmode_Dashboard.jpg" alt="Vorschau des RepoTrack Dashboards"
-                        class="app-screenshot">
+                    <img id="project-screenshot" src="design/RepoTrack_Lightmode_Dashboard.jpg"
+                        alt="Vorschau des RepoTrack Dashboards" class="app-screenshot">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Sneak Peek Section -->
-    <section class="section sneak-peek surface-high">
-        <div class="container">
-            <span class="status-chip">Weitere Apps in Entwicklung</span>
-            <h2>Demnächst verfügbar</h2>
-            <p>Es wird an weiteren Apps gearbeitet. Stay tuned.</p>
+    <section class="py-24 bg-[#020617] border-t border-white/5 reveal">
+        <div class="container mx-auto px-6 text-center">
+            <span
+                class="inline-block px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase border border-white/10 text-gray-400 bg-white/5 mb-6">
+                Upcoming
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Demnächst verfügbar</h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+                Es wird an weiteren Apps gearbeitet. Stay tuned für neue innovative Lösungen.
+            </p>
+
+            <!-- Animated Dots -->
+            <div class="flex justify-center space-x-2 mt-12">
+                <div class="w-2 h-2 bg-cyan-500 rounded-full animate-bounce"></div>
+                <div class="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+                <div class="w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style="animation-delay: 0.4s;"></div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer & Impressum Section -->
-    <footer class="site-footer surface-low">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="policy.html">Privacy Policy</a>
-                    <a href="cookies.html">Cookie Policy</a>
-                    <a href="impressum.html">Impressum</a>
+    <!-- Footer -->
+    <footer class="py-12 bg-[#020617] border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+                <div class="flex items-center space-x-3">
+                    <img src="design/boegedev_logo.png" alt="Logo" class="w-8 h-8 object-contain opacity-50">
+                    <span class="text-xl font-bold text-white/50 tracking-tighter">BoegeDev</span>
+                </div>
+
+                <div class="flex space-x-8 text-sm font-medium text-gray-500">
+                    <a href="policy.html" class="hover:text-cyan-400 transition-colors">Privacy Policy</a>
+                    <a href="cookies.html" class="hover:text-cyan-400 transition-colors">Cookie Policy</a>
+                    <a href="impressum.html" class="hover:text-cyan-400 transition-colors">Impressum</a>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2026 BoegeDev. All rights reserved.</p>
+
+            <div class="mt-12 pt-8 border-t border-white/5 text-center text-xs text-gray-600 tracking-widest uppercase">
+                &copy; 2026 BoegeDev. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
+        // Scroll Reveal Observer
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Original RepoTrack logic
         let currentView = 'dashboard';
         let currentMode = 'light';
 
@@ -124,11 +301,11 @@
 
         function updateProjectImage() {
             const img = document.getElementById('project-screenshot');
-            
+
             // Subtle transition
             img.style.opacity = '0.4';
             img.style.filter = 'blur(4px)';
-            
+
             setTimeout(() => {
                 img.src = projectImages[currentView][currentMode];
                 img.style.opacity = '1';
@@ -143,7 +320,7 @@
             const buttons = document.querySelectorAll('.mode-circle');
             buttons.forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
-            
+
             updateProjectImage();
         }
 

@@ -212,8 +212,8 @@ p {
 
 .project-card {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2rem;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 3rem;
   padding: 2.5rem;
   margin-top: 2rem;
 }
